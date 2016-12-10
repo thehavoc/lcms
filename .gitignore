@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+/public/storage
+/public/media
+/public/temp
+Homestead.yaml
+Homestead.json
+.env
+todo.txt
