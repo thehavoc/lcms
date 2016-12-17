@@ -8,7 +8,8 @@
 |
 */
 
-
 Route::get('', function () {
-
+	
 });
+
+Route::resource('pages', 'Admin\PageController');
