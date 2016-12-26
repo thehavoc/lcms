@@ -14,4 +14,9 @@ class Page extends Model
     protected $fillable = [
         'title', 'description', 'content', 'slug',
     ];
+
+    protected $attributes = [
+        'title', 'description', 'content', 'slug',
+    ];    
+
 }

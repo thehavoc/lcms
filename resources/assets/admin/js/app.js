@@ -1,23 +1,19 @@
-import Vue from 'vue/dist/vue.js'
+window._ = require('lodash');
 
-import VueResource from 'vue-resource';
+window.Vue = require('vue/dist/vue.js');
 
-import SavePage from './components/SavePage.vue';
-import store from './store';
+require('vue-resource');
 
-Vue.use(VueResource);
+// import store from './store';
 
+Vue.component('SavePage', require('./components/SavePage.vue'));
 
 Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
 
 new Vue({
 	'el': '#wrapper',
-	store,
-	'components': { 
-		SavePage
-	},
+	// store,
     created: function () {
-		console.log(store.state.count)
 	},        	
 
 });

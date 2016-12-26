@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Page;
+
 class PageController extends Controller
 {
     /**
@@ -22,10 +24,14 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Page $page)
     {
 
-        return view('admin/page/save');
+        $data = [
+            'page' => $page->toJson(),
+            'button' => 'Add'
+        ];
+        return view('admin/page/save', $data);
     }
 
     /**
