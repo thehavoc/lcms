@@ -2,13 +2,13 @@
 * Helpful components and props for form elements
 */
 
-import FormLabel from '../components/form/FormLabel.vue';
-import FormDescription from '../components/form/FormDescription.vue';
+import FormDescription from '../components/form/FormDescription.vue'
+import FormLabel from '../components/form/FormLabel.vue'
 
 export var FormMixin = {
-    components: { 
-        FormLabel,
-        FormDescription
+    components: {
+        FormDescription,
+        FormLabel
     },
     props: {
         value: String,

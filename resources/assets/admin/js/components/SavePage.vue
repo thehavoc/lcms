@@ -2,6 +2,7 @@
     <div class="form">
         <form v-on:submit="save">
             <field-text :value="page.title" @changeValue="setTitle" label="Title"></field-text>
+            
             <field-textarea :value= "page.content" @changeValue="setContent" label="Content" description="This is the content of the page"></field-textarea>
             <form-button>{{ button }}</form-button>
         </form>
@@ -11,21 +12,19 @@
 
 <script>
 
-    import FieldText from './form/FieldText.vue';
     import FieldTextarea from './form/FieldTextarea.vue';
+    import FieldText from './form/FieldText.vue';
+
     import { SaveMixin } from '../mixins/save.js';
 
     export default {
         mixins: [
             SaveMixin
-        ], 
-        components: { 
+        ],
+        components: {
             FieldText,
             FieldTextarea
         },
-        created: function () {
-
-		},
         methods: {
             save: function(event) {
                 event.preventDefault();

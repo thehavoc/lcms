@@ -1,13 +1,12 @@
 // Test File "Editor.spec.js"
 
-var Vue = require('vue')
-
-import SavePage from '../components/SavePage.vue';
+import Vue from 'vue'
+import savePage from '../components/Form/FormLabel.vue'
 
 describe('SavePage.vue', function () {
 
 	// asserting JavaScript options
-	it('should have correct message', function () {
+	it('example test', function () {
 		expect(true).toBe(true);
 	})
 

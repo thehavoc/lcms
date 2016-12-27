@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<div id="wrapper">
+	<div id="admin-app">
 
 		@include('admin/partials/side')
 
