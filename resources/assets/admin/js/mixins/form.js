@@ -10,11 +10,20 @@ export var FormMixin = {
         FormLabel,
         FormDescription
     },
-	data : function () {
-		return {
-			'value': '',
-			'label': '',
-			'description': ''
-		};
-	}
+    props: {
+        value: String,
+        description: String,
+        label: String
+    },
+    computed: {
+        fieldValue: {
+            get: function () {
+                return this.value;
+            },
+            // setter
+            set: function (newValue) {
+                this.$emit('changeValue', newValue);
+            }
+        }
+    }       
 }

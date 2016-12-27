@@ -15,8 +15,4 @@ class Page extends Model
         'title', 'description', 'content', 'slug',
     ];
 
-    protected $attributes = [
-        'title', 'description', 'content', 'slug',
-    ];    
-
 }

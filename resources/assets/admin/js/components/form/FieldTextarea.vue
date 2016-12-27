@@ -1,8 +1,8 @@
 <template>
-	<div class="field-text form-group">
+	<div class="field-textarea form-group">
 		<form-label>{{ label }}</form-label>
 
-    	<input type="text" v-model="fieldValue" class="form-control" />
+    	<textarea v-model="fieldValue" class="form-control"></textarea>
 
     	<form-description>{{ description }}</form-description>
 

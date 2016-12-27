@@ -27,8 +27,11 @@ class PageController extends Controller
     public function create(Page $page)
     {
 
+        $page->title = 'blabla';
+        $page->content = 'test';
+
         $data = [
-            'page' => $page->toJson(),
+            'page' => $page,
             'button' => 'Add'
         ];
         return view('admin/page/save', $data);
