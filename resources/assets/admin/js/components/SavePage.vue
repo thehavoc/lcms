@@ -4,6 +4,7 @@
             <field-text :value="page.title" @changeValue="setTitle" label="Title"></field-text>
             
             <field-textarea :value= "page.content" @changeValue="setContent" label="Content" description="This is the content of the page"></field-textarea>
+            
             <form-button>{{ button }}</form-button>
         </form>
     </div>
@@ -15,6 +16,8 @@
     import FieldTextarea from './form/FieldTextarea.vue';
     import FieldText from './form/FieldText.vue';
 
+    import ApiSave from '../api/save.js';
+
     import { SaveMixin } from '../mixins/save.js';
 
     export default {
@@ -25,11 +28,20 @@
             FieldText,
             FieldTextarea
         },
+        data: function() {
+            return {
+                api: Object
+            }
+        },
+        created: function() {
+            this.api = new ApiSave();
+        },        
         methods: {
+
             save: function(event) {
                 event.preventDefault();
+                this.api.page(this.page);
 
-                console.log(this.page);
             },
             setContent(value) {
                 this.page.content = value;
