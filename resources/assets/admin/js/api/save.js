@@ -8,13 +8,11 @@ export default class extends Api {
 
 	constructor() {
 		this.apiUrls = {
-		    page: 'admin/pages'
+		    page: 'http://lcms.int/admin/api/addpage'
 		}		
 	}
 
-    page (data) {
-    	super.execute(data);
-    	alert('fix resource');
-
+    page (data, callback) {
+    	super.execute(data, this.apiUrls.page, callback, 'post');
 	}
 }

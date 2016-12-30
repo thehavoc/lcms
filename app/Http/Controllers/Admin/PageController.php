@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Page;
+use Auth;
 
 class PageController extends Controller
 {
@@ -26,7 +27,8 @@ class PageController extends Controller
      */
     public function create(Page $page)
     {
-
+        
+        Auth::guard('api')->user();
         $page->title = 'blabla';
         $page->content = 'test';
 

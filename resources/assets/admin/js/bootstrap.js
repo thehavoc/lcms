@@ -12,13 +12,16 @@ window.GlobalEvents = new Vue();
 
 
 /**
- *  Register Axios that will handle the Ajax request.
+ *  Register Axios that will take care of the Ajax requests.
  */
 
 var axios = require('axios');
 var VueAxios = require('vue-axios');
 
 Vue.use(VueAxios, axios);
+
+let axiosDefaults = require('axios/lib/defaults');
+axiosDefaults.headers.common['X-CSRF-Token'] = document.querySelector('#csrf-token').getAttribute('content');
 
 /**
  * We'll load all main components of the admin app.

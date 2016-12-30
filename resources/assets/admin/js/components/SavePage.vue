@@ -37,11 +37,13 @@
             this.api = new ApiSave();
         },        
         methods: {
-
             save: function(event) {
                 event.preventDefault();
-                this.api.page(this.page);
+                this.api.page(this.page, this.saveCallback);
 
+            },
+            saveCallback: function(respond) {
+                console.log(respond);
             },
             setContent(value) {
                 this.page.content = value;

@@ -1,26 +1,32 @@
 /**
- * 
+ * This is a class that will handle the Ajax requests related to the admin panel.
  */
 
 
 export default class {
 
-	constructor() {
-		this.vm = new Vue();
+	/**
+	 * Send a request to a given URL. 
+	 * 
+	 * If the request is successfull, a callback function will be execuded. 
+	 * Otherwise an error will be thrown.
+	 */
+	execute(data, url, callback, method = 'get') {
 
-	}
-
-	execute(data, url, callback) {
-		Vue.axios.get('/', {
-			firstName: 'Fred',
-			lastName: 'Flintstone'
+		Vue.axios({
+			method: method,
+			url: url,
+			data: data,
 		})
-		.then(function (response) {
-			console.log(response);
+		.then(function (respond) {
+			callback(respond);
 		})
 		.catch(function (error) {
 			console.log(error);
-		});
+			alert('Something went wrong!');
+		});	
+
+		
 	}
 
 }
