@@ -1,5 +1,5 @@
 /**
- * This is a class that will handle the Ajax requests related to the admin panel.
+ * This is a class that will handle Ajax requests related to the admin panel.
  */
 
 
@@ -7,26 +7,24 @@ export default class {
 
 	/**
 	 * Send a request to a given URL. 
-	 * 
-	 * If the request is successfull, a callback function will be execuded. 
-	 * Otherwise an error will be thrown.
+	 * A callback function is executed after the request.
 	 */
 	execute(data, url, callback, method = 'get') {
+		return new Promise((resolve) => {
+			Vue.axios({
+				method: method,
+				url: url,
+				data: data
+			})
+			.then(function (response) {
+				callback(response.data, 'success');
 
-		Vue.axios({
-			method: method,
-			url: url,
-			data: data,
-		})
-		.then(function (respond) {
-			callback(respond);
-		})
-		.catch(function (error) {
-			console.log(error);
-			alert('Something went wrong!');
-		});	
-
-		
+				resolve(response.data);
+			})
+			.catch(function (errors) {
+				callback(errors.response);
+			});	
+		});
 	}
 
 }

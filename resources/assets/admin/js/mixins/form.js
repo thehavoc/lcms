@@ -4,16 +4,19 @@
 
 import FormDescription from '../components/form/FormDescription.vue'
 import FormLabel from '../components/form/FormLabel.vue'
+import FormError from '../components/form/FormError.vue'
 
 export var FormMixin = {
     components: {
         FormDescription,
-        FormLabel
+        FormLabel,
+        FormError
     },
     props: {
         value: String,
         description: String,
-        label: String
+        label: String,
+        fieldName: String
     },
     computed: {
         fieldValue: {

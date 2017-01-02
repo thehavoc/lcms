@@ -2,7 +2,10 @@
 
 @section('content')
 
-<save-page :page="{{ $page }}" button="{{ $button }}"></save-page>
+<save-page 
+	:article="{{ $page }}"
+>
+</save-page>
 
 @endsection
 

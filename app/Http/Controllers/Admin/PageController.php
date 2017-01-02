@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\SavePageRequest;
 use App\Page;
-use Auth;
 
 class PageController extends Controller
 {
@@ -27,11 +27,9 @@ class PageController extends Controller
      */
     public function create(Page $page)
     {
-        
-        Auth::guard('api')->user();
-        $page->title = 'blabla';
-        $page->content = 'test';
 
+        $page->id = 0;
+        
         $data = [
             'page' => $page,
             'button' => 'Add'
@@ -45,9 +43,10 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SavePageRequest $request, Page $page)
     {
-        //
+        $page = $page->create($request->all());
+        return $page->id;
     }
 
     /**
@@ -79,9 +78,10 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SavePageRequest $request, Page $page)
     {
-        //
+        $page->update($request->all());
+        return $page->id;
     }
 
     /**

@@ -1,9 +1,33 @@
 <template>
     <div class="form">
-        <form v-on:submit="save">
-            <field-text :value="page.title" @changeValue="setTitle" label="Title"></field-text>
+        <form v-on:submit.prevent="save">
+            <field-text 
+                :value="article.title" 
+                @changeValue="setTitle" 
+                fieldName="title" 
+                label="Title">
+            </field-text>
+
+            <field-text 
+                :value="article.slug" 
+                @changeValue="setSlug" 
+                fieldName="slug" 
+                label="Slug">
+            </field-text>
             
-            <field-textarea :value= "page.content" @changeValue="setContent" label="Content" description="This is the content of the page"></field-textarea>
+            <field-textarea 
+                :value="article.content" 
+                @changeValue="setContent" 
+                label="Content" 
+                description="This is the content of the page">
+            </field-textarea>
+
+            <field-textarea 
+                :value="article.description" 
+                @changeValue="setDescription" 
+                label="Description" 
+                description="This is the description of the page">
+            </field-textarea>
             
             <form-button>{{ button }}</form-button>
         </form>
@@ -28,33 +52,40 @@
             FieldText,
             FieldTextarea
         },
-        data: function() {
-            return {
-                api: Object
-            }
-        },
         created: function() {
             this.api = new ApiSave();
         },        
         methods: {
             save: function(event) {
-                event.preventDefault();
-                this.api.page(this.page, this.saveCallback);
+                this.api.page(this.article, this.saveCallback);
 
             },
-            saveCallback: function(respond) {
-                console.log(respond);
+            saveCallback: function(response) {
+                this.handleRequest(response);
             },
+            setSlug(value) {
+                this.article.slug = value;
+            },            
+            setDescription(value) {
+                this.article.description = value;
+            },            
             setContent(value) {
-                this.page.content = value;
+                this.article.content = value;
             },
             setTitle(value) {
-                this.page.title = value;
+                this.article.title = value;
             }
         },
         props: {
-            button: String,
-            page: Object
+            article: Object
+        },
+        data: function() {
+            return {
+                messages: {
+                    update: 'The page has been updated successfully.',
+                    add: 'The page has been added successfully.'
+                }
+            }
         }
     }
 </script>

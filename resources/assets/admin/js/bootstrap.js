@@ -21,10 +21,4 @@ var VueAxios = require('vue-axios');
 Vue.use(VueAxios, axios);
 
 let axiosDefaults = require('axios/lib/defaults');
-axiosDefaults.headers.common['X-CSRF-Token'] = document.querySelector('#csrf-token').getAttribute('content');
-
-/**
- * We'll load all main components of the admin app.
- */
-
- Vue.component('SavePage', require('./components/SavePage.vue'));
+axiosDefaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('#csrf-token').getAttribute('content');

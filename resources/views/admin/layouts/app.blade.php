@@ -46,8 +46,10 @@
             <!-- /.row -->                                  
     	</div>
 
-    </div>
+        <alert></alert>
 
+    </div>
+    
     <script type="text/javascript" src="{{ URL::asset('/assets/admin/js/app.js') }}?v=<?php echo rand(0, 10000); ?>"></script>
 
 </body>

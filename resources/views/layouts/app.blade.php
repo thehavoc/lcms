@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top" style="z-index: 3">
             <div class="container">
                 <div class="navbar-header">
 
@@ -79,6 +79,8 @@
         </nav>
 
         @yield('content')
+
+        <alert></alert>
     </div>
 
     <!-- Scripts -->

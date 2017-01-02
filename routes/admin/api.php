@@ -1,3 +1,3 @@
 <?php
 
-Route::controller('/', 'Admin\ApiController');
+// Route::post('path', 'Admin\ApiController@method');
