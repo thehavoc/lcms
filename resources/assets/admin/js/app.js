@@ -9,6 +9,7 @@ require('./bootstrap');
  */
 
  Vue.component('SavePage', require('./components/SavePage.vue'));
+ Vue.component('Pages', require('./components/Pages.vue'));
  Vue.component('Alert', require('./components/Alert.vue'));
 
 /**

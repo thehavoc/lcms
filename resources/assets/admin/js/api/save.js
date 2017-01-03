@@ -10,21 +10,31 @@ export default class extends Api {
 		this.apiUrls = {
 		    page: 'http://lcms.int/admin/pages'
 		}		
+
+        this.url = '';
+        this.method = '';
+
 	}
 
-    page (data, callback) {
+    page(data, callback) {
 
-    	GlobalEvents.$emit('errorRemoved');
-    	
-    	var method = 'post';
-    	var url = this.apiUrls.page;
+        this.beforeExecute(data, this.apiUrls.page);
 
-    	if(data.hasOwnProperty('id') && data.id) {
-    		method = 'patch';
-    		url = url + '/' + data.id;
-    	}
-
-    	super.execute(data, url, callback, method);
+    	super.execute(data, this.url, callback, this.method);
 	}
+
+    beforeExecute(data, articleBaseUrl) {
+
+        GlobalEvents.$emit('errorRemoved');
+        
+        this.method = 'post';
+        this.url = articleBaseUrl;
+
+        if(data.hasOwnProperty('id') && data.id) {
+            this.method = 'patch';
+            this.url = this.url + '/' + data.id;
+        }        
+
+    }
 
 }

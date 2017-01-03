@@ -49,9 +49,8 @@
 </script>
 
 <style>
-
 	.app-alert { position: fixed; min-width: 250px; top: 20px; right: 20px; z-index: 999; }
-
+    
     .fade-enter-active, 
     .fade-leave-active { transition: opacity .5s }
 

@@ -15,9 +15,14 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Page $page)
     {
-        //
+
+        $data = [
+            'pages' => $page->all(),
+        ];
+
+        return view('admin/page/index', $data);
     }
 
     /**
@@ -55,9 +60,9 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Page $page)
     {
-        //
+        dd('Preview mode');
     }
 
     /**
@@ -66,9 +71,13 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Page $page)
     {
-        //
+        $data = [
+            'page' => $page,
+            'button' => 'Update'
+        ];
+        return view('admin/page/save', $data);
     }
 
     /**

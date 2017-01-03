@@ -12,6 +12,7 @@
             <ul class="nav in" id="side-menu">
                 <li>
                     <a href="{{ url('admin') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="{{ url('admin/pages') }}"><i class="fa fa-dashboard fa-fw"></i> Pages</a>
                 </li>
    
             </ul>
