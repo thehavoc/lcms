@@ -19,6 +19,8 @@ export var SaveMixin = {
 
             if(response === parseInt(response)) {
 
+                this.button = 'Update';
+                
                 if(this.article.id === response) {
                     GlobalEvents.$emit('setAlertMessage', this.messages.update, 'info');
                     return;
@@ -26,7 +28,6 @@ export var SaveMixin = {
                 }
 
                 this.article.id = response;
-                this.button = 'Update';
                 GlobalEvents.$emit('setAlertMessage', this.messages.add, 'info');
                 return;
             }

@@ -1,6 +1,6 @@
 <template>
     <div class="form">
-        <form v-on:submit.prevent="save">
+        <form @submit.prevent="save">
             <field-text 
                 :value="article.title" 
                 @changeValue="setTitle" 

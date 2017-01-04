@@ -20,6 +20,8 @@ class PageController extends Controller
 
         $data = [
             'pages' => $page->all(),
+            'title' => 'Pages'
+
         ];
 
         return view('admin/page/index', $data);
@@ -37,7 +39,8 @@ class PageController extends Controller
         
         $data = [
             'page' => $page,
-            'button' => 'Add'
+            'button' => 'Add',
+            'title' => 'Add page'
         ];
         return view('admin/page/save', $data);
     }
@@ -75,7 +78,8 @@ class PageController extends Controller
     {
         $data = [
             'page' => $page,
-            'button' => 'Update'
+            'button' => 'Update',
+            'title' => 'Edit page',
         ];
         return view('admin/page/save', $data);
     }
@@ -99,8 +103,8 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Page $page)
     {
-        //
+        return $page->destroy($page->id);
     }
 }

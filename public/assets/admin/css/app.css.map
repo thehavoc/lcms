@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"app.css","sourcesContent":["/* Listing */\n\n.admin-group .admin-actions { float: right; }\n.admin-group .list-group-item:hover { background: #f4f4f4; }\n\n/* Delete */\n\n.btn-remove { color: #d9534f; }"]}

@@ -1,0 +1,8 @@
+/* Listing */
+
+.admin-group .admin-actions { float: right; }
+.admin-group .list-group-item:hover { background: #f4f4f4; }
+
+/* Delete */
+
+.btn-remove { color: #d9534f; }

@@ -15,7 +15,8 @@
 
     <!-- Custom CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
-
+    
+    <link href="{{ URL::asset('/assets/admin/css/app.css') }}" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">    
 </head>
@@ -28,7 +29,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Pages</h1>
+                    <h1 class="page-header">{{ $title }}</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

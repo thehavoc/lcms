@@ -14,5 +14,9 @@ require('laravel-elixir-vue-2');
 elixir((mix) => {
     mix.webpack([
         './resources/assets/admin/js/app.js'
-    ], 'public/assets/admin/js/app.js');
+    ], 'public/assets/admin/js/app.js')
+    .styles([
+        './resources/assets/admin/css/app.css'
+    ], 'public/assets/admin/css/app.css');
+
 });
