@@ -10,6 +10,10 @@ export default class {
 	 * A callback function is executed after the request.
 	 */
 	execute(data, url, callback, method = 'get') {
+		if(!url || !callback) {
+			return false;
+		}
+
 		return new Promise((resolve) => {
 			Vue.axios({
 				method: method,

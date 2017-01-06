@@ -2,11 +2,7 @@
 
 @section('content')
 
-
-<pages 
-	:articles="{{ $pages }}"
->
-</pages>
+<pages></pages>
 
 @endsection
 

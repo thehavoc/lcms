@@ -1,16 +1,22 @@
 <template>
-    <ul class="list-group admin-group">
-        <li class="list-group-item list-unstyled admin-page" v-for="article in listing">
-            
-            <a :href="article.editUrl" class="admin-page-title">{{ article.title }}</a>
 
-            <div class="admin-actions">
-                <a class="btn btn-primary btn-xs" :href="article.editUrl">Edit</a>
-                <remove type="page" :article="article"></remove>
-            </div>
-        </li>
+    <div>
+        <ul class="list-group admin-group">
+            <li class="list-group-item list-unstyled admin-page" v-for="article in listing">
+                
+                <a :href="article.editUrl" class="admin-page-title">{{ article.title }}</a>
 
-    </ul>
+                <div class="admin-actions">
+                    <a class="btn btn-primary btn-xs" :href="article.editUrl">Edit</a>
+                    <remove type="page" :article="article"></remove>
+                </div>
+            </li>
+
+        </ul>
+
+        <pagination apiMethod="getPages" :articleType="this.type"></pagination>
+    </div>
+
 </template>
 
 <script>
@@ -19,6 +25,7 @@
     */
 
     import Remove from './includes/Remove.vue';
+    import Pagination from './includes/Pagination.vue';
 
     import { ListingMixin } from '../mixins/listing.js';
 
@@ -27,26 +34,21 @@
             ListingMixin
         ],        
         components: {
-            Remove
+            Remove,
+            Pagination
         },
         data: function() {
 
             return {
                 removeMessage: 'The page has been removed.',
-                type: 'page',
-                listing: Array
+                type: 'page'                
             }
         },
 
         created: function() {
+                        
         },
         methods: {
-        },
-        props: {
-            articles: Array
-        },
-        created: function() {
-            
         }
     }
 </script>

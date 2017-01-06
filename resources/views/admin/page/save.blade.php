@@ -2,8 +2,7 @@
 
 @section('content')
 
-<save-page 
-	:article="{{ $page }}"
+<save-page :article="{{ $page }}"
 >
 </save-page>
 

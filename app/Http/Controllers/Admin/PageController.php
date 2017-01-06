@@ -18,8 +18,8 @@ class PageController extends Controller
     public function index(Page $page)
     {
 
-        $data = [
-            'pages' => $page->all(),
+        $data = [            
+            'apiMethod' => 'getPages',
             'title' => 'Pages'
 
         ];

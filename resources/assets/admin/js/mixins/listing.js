@@ -22,6 +22,13 @@ export var ListingMixin = {
                 GlobalEvents.$emit('setAlertMessage', vm.removeMessage, 'info');
             }
         });
+
+
+        GlobalEvents.$on('articlesProvided', function(articles, type) {
+            if(type === vm.type && articles) {
+                vm.listing = articles;
+            }
+        });        
     }
 }
 

@@ -1,3 +1,3 @@
 <?php
 
-// Route::post('path', 'Admin\ApiController@method');
+Route::get('getPages', 'Admin\ApiController@getPages');

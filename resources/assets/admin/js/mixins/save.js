@@ -14,6 +14,11 @@ export var SaveMixin = {
             button: 'Add'
         }
     },
+    created: function() {
+        if('id' in this.article) {
+            this.button = 'Update';
+        }
+    },
     methods: {
         handleRequest: function(response) {
 
