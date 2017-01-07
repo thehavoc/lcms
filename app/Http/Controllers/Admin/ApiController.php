@@ -18,11 +18,11 @@ class ApiController extends Controller
     protected $articlesPerPage = 4;
 
     /**
-     * Default offest
+     * Default offset
      *
      * @var array
      */
-    protected $offset = 1;
+    protected $offset = 0;
 
     /**
      * Get all pages
@@ -39,7 +39,7 @@ class ApiController extends Controller
 
         $page = new Page();         
 
-    	$data['articles'] = $page->limit($this->articlesPerPage)->offset($this->offset)->get();
+        $data['articles'] = $page->offset($this->offset * $this->articlesPerPage)->limit($this->articlesPerPage)->get();
         $data['pages'] = ceil($page->all()->count() / $this->articlesPerPage);
 
         return $data;

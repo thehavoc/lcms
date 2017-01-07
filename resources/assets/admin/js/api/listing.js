@@ -12,7 +12,7 @@ export default class extends Api {
 		}
 	}
 
-    getPages(offest = 1, callback) {
+    getPages(offest = 0, callback) {
 
         super.execute('', this.apiUrls.pages + '?offset=' + offest, callback, 'get');
     }

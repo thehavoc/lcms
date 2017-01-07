@@ -53,7 +53,7 @@
         	},
         	getArticles() {
 	        	if(this.apiMethod) {
-	        		this.api[this.apiMethod](this.currentPage, this.apiCallback);
+	        		this.api[this.apiMethod](this.currentPage - 1, this.apiCallback);
 
 	        	}        		
         	},

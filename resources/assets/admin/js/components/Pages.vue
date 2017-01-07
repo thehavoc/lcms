@@ -1,6 +1,9 @@
 <template>
 
     <div>
+        <div class="panel">
+            <a href="http://lcms.int/admin/pages/create" class="btn btn-default">Add page</a>
+        </div>
         <ul class="list-group admin-group">
             <li class="list-group-item list-unstyled admin-page" v-for="article in listing">
                 

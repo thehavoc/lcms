@@ -11,21 +11,15 @@ export var SaveMixin = {
     data: function() {
         return {
             api: Object,
-            button: 'Add'
         }
     },
     created: function() {
-        if('id' in this.article) {
-            this.button = 'Update';
-        }
     },
     methods: {
         handleRequest: function(response) {
 
             if(response === parseInt(response)) {
 
-                this.button = 'Update';
-                
                 if(this.article.id === response) {
                     GlobalEvents.$emit('setAlertMessage', this.messages.update, 'info');
                     return;
@@ -50,6 +44,15 @@ export var SaveMixin = {
             for(let x in data) {
                 GlobalEvents.$emit('errorApplied', data[x][0] , x);    
             }
+        }
+    },
+    computed: {
+        button: function() {
+            if(this.article && 'id' in this.article && this.article.id) {
+                return 'Update';
+            }
+
+            return 'Add';
         }
     }
 }
