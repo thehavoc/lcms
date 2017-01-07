@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; z-index: 3">
     <div class="navbar-header">
         
-        <a class="navbar-brand" href="index.html">LCMS Admin</a>
+        <a class="navbar-brand" href="{{ url('admin') }}">LCMS Admin</a>
     </div>
     <!-- /.navbar-header -->
 

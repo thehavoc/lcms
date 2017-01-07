@@ -8,8 +8,6 @@
 |
 */
 
-Route::get('', function () {
-	
-});
+Route::get('/', 'Admin\DashboardController@index' );
 
 Route::resource('pages', 'Admin\PageController');
