@@ -9,6 +9,7 @@
             </field-text>
 
             <field-text 
+                v-if="article.id"
                 :value="article.slug" 
                 @changeValue="setSlug" 
                 fieldName="slug" 

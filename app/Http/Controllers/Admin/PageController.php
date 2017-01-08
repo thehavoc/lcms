@@ -53,6 +53,8 @@ class PageController extends Controller
      */
     public function store(SavePageRequest $request, Page $page)
     {
+        $request = $request->prepareSlug($page);
+
         $page = $page->create($request->all());
         return $page->id;
     }
@@ -93,6 +95,8 @@ class PageController extends Controller
      */
     public function update(SavePageRequest $request, Page $page)
     {
+        $request = $request->prepareSlug($page);
+
         $page->update($request->all());
         return $page->id;
     }

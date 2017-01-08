@@ -1,10 +1,6 @@
-// Test File "Editor.spec.js"
 window.Vue = require('vue/dist/vue.js');
 
 Vue.component('Alert', require('../components/Alert.vue'));
-
-// import Vue from 'vue'
-// import SavePage from '../components/SavePage.vue'
 
 describe('SavePage.vue', function () {
 	var vm;
